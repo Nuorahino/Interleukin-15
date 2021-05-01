@@ -1,0 +1,15 @@
+
+k_alpha*y[8] - d[3]*y[3]
+- k[12]*k_O2*(delta*y[5] + a[10])*(1-p_6*D) *y[3]/(xi_44+y[3])
+- k[3]*y[3]*y[4] + k[4]*y[5]
+- k[9]*k_O2*phi*(1-p_6*D)*y[3]/(xi_4 + y[3]) + k[10]*y[9]
+
+k_alpha * f[8] - d_4 * f[3]
+- k_4 * f[3] * f[4] + 75.895 * f[5]
+- k_13 * 0.96 * (200 * f[5] + 4.17) * (f[3]/ (128.022 + f[3]))
+- 421.353 * 0.96 * phi * (f[3] / (15.018 + f[3])) + 0.211 * f[9],
+
+
+The Equation 8 in the master thesis is significantly different to the function in the paper (k_8 instead of d_8) and partly models the treatment with DMOG (D) while this is not the case for the other parts of the DGL.
+
+When are the cells primed (cultivated with normoxia) does it correlate with any of the (i.e. O2 levels)
