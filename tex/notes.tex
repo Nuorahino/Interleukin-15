@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{dirtytalk}
+
+
+\begin{document}
+\section*{Implemented changes}
+\begin{itemize}
+  \item The Sensibility analysis is now based on the maximum of the 2 norm, for a variable (but desecrate values of \(t\))
+  \item The algorithm also calculates the time of the maximum (which could be used as relevant function for the sens.
+    analysis)
+  \item The ODE system has been corrected, s.t. it represents the ODE System of the paper correctly\\
+        (I compared the plots to the Matlab plots in the paper)
+  \item The Condition of the Experiment can be changed through variables similarly to the Matlab implementation.
+\end{itemize}
+\section*{Problems with the implementation}
+\begin{itemize}
+  \item ODEintWarning: Excess work done on this call \\
+    \say{solved} by using \texttt{solve\_ivp}
+  \item The restrictions on the number of sampling vectors in the master thesis seems incorrect.
+    It says that the number of sampling vectors has to be a power-of two, while the cited paper says:
+    \say{with N a sufficiently large number (500 or higher)} \\
+    Additionally the paper notes that the cost of the analysis if \(N \cdot (k +2)\) where \(N\) is the number of
+    Sampling vectors while the master thesis as far as I understand, denotes the number of Sampling vectors with \(k\) and as
+    a result the formula \((2+n) * k\) \say{Modellauswertungen} also seems incorrect.\\
+    The SAlib Package also accepts values of \(k\) which are not a power-of-two without any issues.
+\end{itemize}
+\section*{Questions for the parameters}
+I copied the Intervals for the parameters from the master thesis, and only checked for the Parameters from Table 2 of the
+Research paper. Should I also include the parameters from table 1 which were determined using sensitivity analysis? \\
+
+The Intervals as far as I can tell have either been \(+- 25\%\) or standard deviation around the value, is there any reason
+to this, especially in regards to when each of the methods is used?\\
+
+In the Matlab Code there is a variable \texttt{degrinhi} which I did not find in the Paper, and therefore also have not
+implemented. If I looked correctly the variable is also always set to 0, can I neglect it? \\
+\end{document}
